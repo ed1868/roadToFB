@@ -1,22 +1,6 @@
-/**
- * @param {number} x
- * @return {number}
- */
-var reverse = function (x) {
-  let result = parseFloat(x.toString().split("").reverse().join(""));
-  
-  if (result < Math.pow(-2, 31) || result > Math.pow(2, 31)) {
-    return 0;
-    }
-  return result * Math.sign(x);
-};
 
-// TEST CASES FOR PROBLEM
+let palindrome = (num) => {
 
-function printString(str) {
-  console.log(typeof str);
-  var out = '["' + str + '"]';
-  return Array(out);
 }
 
 var testCaseNumber = 1;
@@ -45,11 +29,11 @@ function check(expected, output) {
 }
 
 var int = -123;
-var expectedOne = -321;
-var outputOne = reverse(int);
+var expectedOne = false;
+var outputOne = palindrome(int);
 check(expectedOne, outputOne);
 
-var int2 = 198490;
-var expectedTwo = 094819;
-var outputTwo = reverse(int2);
+var int2 = 121;
+var expectedTwo = true;
+var outputTwo = palindrome(int2);
 check(expectedTwo, outputTwo);
