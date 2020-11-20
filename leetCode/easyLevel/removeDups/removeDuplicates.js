@@ -1,3 +1,10 @@
+removeDuplicates = (arr) => {
+  console.log(`Array given : ${arr}`);
+
+  console.log(`SHIT : ${arr.filter((value, index) => arr.indexOf(value) === index)}`)
+  return arr.filter((value, index) => arr.indexOf(value) === index);
+}
+
 let testCaseNumber = 1;
 
 check = (expected, output) => {
@@ -19,13 +26,13 @@ check = (expected, output) => {
   } else {
     let out = "";
     out += wrongTick + `Test # ${testCaseNumber} : Expected ${expected}`;
-    out += `Your output : ${output}`;
+    out += `  Your output : ${output}`;
     console.log(out);
   }
   testCaseNumber++;
 };
 
-let arrTest1 = [1, 1, 2];
-let expectedOne = [1, 2];
+let arrTest1 = [1,1,2];
+let expectedOne = [1,2];
 let outputOne = removeDuplicates(arrTest1);
 check(expectedOne,outputOne);
