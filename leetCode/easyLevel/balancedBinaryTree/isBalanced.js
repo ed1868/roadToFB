@@ -15,7 +15,21 @@ isBalanced = (root) => {
     return true;
   }
 
-  return treeHeight(root) != -1;
+  return getTreeHeight(root) != -1;
+};
+
+let getTreeHeight = (node) => {
+  if (node == null) {
+    return 0;
+  }
+
+  let left = getTreeHeight(node.left);
+  let right = getTreeHeight(node.right);
+
+  if (left == -1 || right == -1 || Math.abs(left - right) > 1) {
+    return -1;
+  }
+  return Math.max(left, right) + 1;
 };
 
 let testCaseNumber = 1;
